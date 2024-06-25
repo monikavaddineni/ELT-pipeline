@@ -34,6 +34,8 @@ models:
     # Config indicated by + and applies to all files under models/example/
     staging:
       +materialized: view
+      snowflake_warehoues: dbt_wh
     marts:
       +materialized: view
+      snowflake_warehouse: dbt_wh
       
