@@ -1,4 +1,3 @@
- 
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -13,7 +12,7 @@ profile: 'datapipeline'
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 analysis-paths: ["analyses"]
-test-paths: ["tests"]
+data-test-paths: ["data_tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
@@ -21,7 +20,6 @@ snapshot-paths: ["snapshots"]
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
-
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -31,10 +29,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   datapipeline:
-    # Config indicated by + and applies to all files under models/example/
+    # Config indicated by + and applies to all files under models/datapipeline/
     staging:
-      +materialized: view
-      snowflake_warehouse: dbt_wh
+       +materialized: view
+       snowflake_warehouse: dbt_wh
     marts:
-      +materialized: view
-      snowflake_warehouse: dbt_wh
+       +materialized: table
+       snowflake_warehouse: dbt_wh
+
