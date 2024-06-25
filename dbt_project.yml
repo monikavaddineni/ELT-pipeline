@@ -29,6 +29,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   datapipeline:
+<<<<<<< HEAD
     # Config indicated by + and applies to all files under models/datapipeline/
     staging:
        +materialized: view
@@ -37,3 +38,13 @@ models:
        +materialized: table
        snowflake_warehouse: dbt_wh
 
+=======
+    # Config indicated by + and applies to all files under models/example/
+    staging:
+      +materialized: view
+      snowflake_warehoues: dbt_wh
+    marts:
+      +materialized: table
+      snowflake_warehouse: dbt_wh
+      
+>>>>>>> b98bc3244a4754550506393711a2c407626bf557
